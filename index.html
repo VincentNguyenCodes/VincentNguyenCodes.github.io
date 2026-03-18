@@ -45,6 +45,9 @@
     <div class="container">
       <h2 class="section-title">About</h2>
       <div class="about-grid">
+        <div class="about-photo">
+          <img src="images/profile/Headshot.jpg" alt="Vincent Nguyen" />
+        </div>
         <div class="about-text">
           <p>
             I am a student at <strong>University of Southern California</strong> studying Computer Science.
@@ -94,9 +97,10 @@
             <h3 class="project-name">FlickPick</h3>
             <p class="project-desc">
               Full-stack personalized movie recommendation system with per-user neural network training.
-              Built a RecommenderNet in PyTorch on 12 engineered features, a cold-start onboarding flow
-              across 5 genres seeded from a 200-film TMDB catalog, and a JWT-authenticated Django REST API
-              with watch history and cascading account deletion.
+              Built a RecommenderNet in PyTorch on 16 engineered features — including genre preferences,
+              ratings history, and a decade-affinity feature so users who favor older films see more of them —
+              with a cold-start onboarding flow across 6 genres seeded from a 200-film TMDB catalog.
+              JWT-authenticated Django REST API with watch history, re-rating, and cascading account deletion.
             </p>
             <div class="project-tags">
               <span class="tag">PyTorch</span>
@@ -134,9 +138,11 @@
             </div>
             <h3 class="project-name">San Jose Weather Predictor</h3>
             <p class="project-desc">
-              ML weather app trained on 11 years of NOAA data, achieving 9.6% lower prediction error than
-              baseline (4.90°F vs 5.42°F MAE for highs). Engineered 23 input features capturing seasonal
-              and short-term patterns, served via Django REST API with a glassmorphism-styled React frontend.
+              ML weather app trained on 12 years of historical data, achieving 15% lower error than baseline
+              (4.53°F vs 5.33°F MAE for highs). Engineered 40 input features including normalized temps,
+              precipitation trends, and temperature deltas. Today's forecast pulls live from the Open-Meteo
+              API; a daily management command backfills confirmed actuals so the model never trains on
+              its own predictions. Served via Django REST API with a glassmorphism React frontend.
             </p>
             <div class="project-tags">
               <span class="tag">PyTorch</span>
