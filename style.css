@@ -253,9 +253,19 @@ section {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
   gap: 4rem;
   align-items: start;
+}
+
+.about-photo img {
+  width: 200px;
+  height: 240px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1px solid var(--border);
+  display: block;
 }
 
 .about-text p {
@@ -757,6 +767,11 @@ footer {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .about-photo img {
+    width: 140px;
+    height: 170px;
   }
 }
 
