@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vincent Nguyen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">VN</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hi, I'm</p>
+      <h1 class="hero-name">Vincent Nguyen</h1>
+      <p class="hero-tagline">CS Student at USC &mdash; building full-stack apps and ML systems</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="mailto:vincentnguyen0535@gmail.com" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a Computer Science student at the <strong>University of Southern California</strong> (graduating May 2027),
+            passionate about building things that actually work well. My work spans full-stack web development,
+            machine learning, and systems programming — from training PyTorch neural networks to designing
+            normalized database schemas serving 10,000+ daily requests.
+          </p>
+          <p>
+            Outside of class projects, I run a custom PC building business and served as Pledge Class Vice
+            President for Phi Delta Theta at USC.
+          </p>
+          <a href="https://github.com/VincentNguyenCodes" target="_blank" rel="noopener" class="btn btn-outline">
+            GitHub Profile
+          </a>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Full-Stack Projects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">9.6%</span>
+            <span class="stat-label">Below Baseline ML Error</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">12yrs</span>
+            <span class="stat-label">UC Admissions Data Parsed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Film TMDB Catalog Built</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-list">
+
+        <!-- FlickPick -->
+        <div class="project-row reveal">
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-number">01</span>
+              <span class="project-date">March 2026</span>
+            </div>
+            <h3 class="project-name">FlickPick</h3>
+            <p class="project-desc">
+              Full-stack personalized movie recommendation system with per-user neural network training.
+              Built a RecommenderNet in PyTorch on 12 engineered features, a cold-start onboarding flow
+              across 5 genres seeded from a 200-film TMDB catalog, and a JWT-authenticated Django REST API
+              with watch history and cascading account deletion.
+            </p>
+            <div class="project-tags">
+              <span class="tag">PyTorch</span>
+              <span class="tag">Django REST</span>
+              <span class="tag">React</span>
+              <span class="tag">Neural Network</span>
+            </div>
+            <a href="https://github.com/VincentNguyenCodes/flickpick" target="_blank" rel="noopener" class="btn btn-outline project-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="carousel" id="carousel-flickpick">
+              <div class="carousel-track">
+                <img src="images/flickpick/1.png" alt="FlickPick login screen" loading="lazy" />
+                <img src="images/flickpick/2.png" alt="FlickPick recommendations" loading="lazy" />
+              </div>
+              <button class="carousel-btn prev" onclick="slide('carousel-flickpick', -1)" aria-label="Previous">&#8249;</button>
+              <button class="carousel-btn next" onclick="slide('carousel-flickpick', 1)" aria-label="Next">&#8250;</button>
+              <div class="carousel-dots" id="dots-carousel-flickpick">
+                <span class="dot active" onclick="goTo('carousel-flickpick', 0)"></span>
+                <span class="dot" onclick="goTo('carousel-flickpick', 1)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Predictor -->
+        <div class="project-row project-row-reverse reveal">
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-number">02</span>
+              <span class="project-date">March 2026</span>
+            </div>
+            <h3 class="project-name">San Jose Weather Predictor</h3>
+            <p class="project-desc">
+              ML weather app trained on 11 years of NOAA data, achieving 9.6% lower prediction error than
+              baseline (4.90°F vs 5.42°F MAE for highs). Engineered 23 input features capturing seasonal
+              and short-term patterns, served via Django REST API with a glassmorphism-styled React frontend.
+            </p>
+            <div class="project-tags">
+              <span class="tag">PyTorch</span>
+              <span class="tag">Django</span>
+              <span class="tag">React</span>
+              <span class="tag">NOAA Data</span>
+            </div>
+            <a href="https://github.com/VincentNguyenCodes/Weather-Predictor" target="_blank" rel="noopener" class="btn btn-outline project-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="carousel" id="carousel-weather">
+              <div class="carousel-track">
+                <img src="images/weather/1.png" alt="Weather forecast view" loading="lazy" />
+                <img src="images/weather/2.png" alt="Weather date prediction input" loading="lazy" />
+              </div>
+              <button class="carousel-btn prev" onclick="slide('carousel-weather', -1)" aria-label="Previous">&#8249;</button>
+              <button class="carousel-btn next" onclick="slide('carousel-weather', 1)" aria-label="Next">&#8250;</button>
+              <div class="carousel-dots" id="dots-carousel-weather">
+                <span class="dot active" onclick="goTo('carousel-weather', 0)"></span>
+                <span class="dot" onclick="goTo('carousel-weather', 1)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UC Admissions -->
+        <div class="project-row reveal">
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-number">03</span>
+              <span class="project-date">November 2025</span>
+            </div>
+            <h3 class="project-name">UC Admissions Trends Database</h3>
+            <p class="project-desc">
+              C++ data analysis tool parsing 12 years of UC admissions data across all 9 campuses using
+              custom data structures — no external libraries. Built a multi-tier in-memory database with
+              a custom singly linked list, hand-written CSV parser, and Docker + CMake build system with
+              Matplot++ visualization.
+            </p>
+            <div class="project-tags">
+              <span class="tag">C++</span>
+              <span class="tag">Docker</span>
+              <span class="tag">CMake</span>
+              <span class="tag">Data Structures</span>
+            </div>
+            <a href="https://github.com/VincentNguyenCodes" target="_blank" rel="noopener" class="btn btn-outline project-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="terminal-mock">
+              <div class="terminal-bar">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">uc_admissions &mdash; zsh</span>
+              </div>
+              <div class="terminal-body">
+                <p><span class="t-prompt">$</span> ./uc_admissions</p>
+                <p><span class="t-green">Loading 48 CSV files across 9 campuses...</span></p>
+                <p><span class="t-dim">&#x25BA; Parsed 12 years (2012–2023)</span></p>
+                <p><span class="t-dim">&#x25BA; 9 campuses, 200+ majors indexed</span></p>
+                <p>&nbsp;</p>
+                <p><span class="t-prompt">Query:</span> <span class="t-white">UCLA > CS > admit_rate</span></p>
+                <p><span class="t-dim">Year    Applied   Admitted   Rate</span></p>
+                <p><span class="t-dim">─────────────────────────────────</span></p>
+                <p>2020 &nbsp;&nbsp; 15,421 &nbsp;&nbsp;&nbsp; 847 &nbsp;&nbsp;&nbsp; <span class="t-accent">5.49%</span></p>
+                <p>2021 &nbsp;&nbsp; 17,038 &nbsp;&nbsp;&nbsp; 812 &nbsp;&nbsp;&nbsp; <span class="t-accent">4.77%</span></p>
+                <p>2022 &nbsp;&nbsp; 18,294 &nbsp;&nbsp;&nbsp; 803 &nbsp;&nbsp;&nbsp; <span class="t-accent">4.39%</span></p>
+                <p>2023 &nbsp;&nbsp; 19,102 &nbsp;&nbsp;&nbsp; 791 &nbsp;&nbsp;&nbsp; <span class="t-accent">4.14%</span></p>
+                <p>&nbsp;</p>
+                <p><span class="t-prompt">$</span> <span class="t-cursor">█</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">Java</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Frameworks & Libraries</h3>
+          <div class="skill-tags">
+            <span class="tag">React</span>
+            <span class="tag">Django</span>
+            <span class="tag">Django REST</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Scikit-Learn</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Tools & Platforms</h3>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Docker</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-sub">I'm currently open to internship and new grad opportunities. Feel free to reach out.</p>
+      <div class="contact-links">
+        <a href="mailto:vincentnguyen0535@gmail.com" class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          vincentnguyen0535@gmail.com
+        </a>
+        <a href="https://github.com/VincentNguyenCodes" target="_blank" rel="noopener" class="contact-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          VincentNguyenCodes
+        </a>
+        <a href="mailto:nguyenv6@usc.edu" class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10 7 10-7-10-7z"/></svg>
+          nguyenv6@usc.edu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by Vincent Nguyen &mdash; 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
