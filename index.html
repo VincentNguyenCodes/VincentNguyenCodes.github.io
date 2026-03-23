@@ -96,12 +96,12 @@
             </div>
             <h3 class="project-name">FlickPick</h3>
             <p class="project-desc">
-              Full-stack personalized movie recommendation system with per-user neural network training.
-              Built a RecommenderNet in PyTorch on 16 engineered features, including genre preferences,
-              ratings history, and a decade-affinity feature so users who favor older films see more of them,
-              with a cold-start onboarding flow across 6 genres seeded from a 200-film TMDB catalog.
-              Rating submissions enqueue async Celery tasks that retrain the model and cache weights in Redis,
-              so recommendations load instantly from cache rather than blocking on training.
+              Full-stack personalized movie recommendation system built on a two-tower neural network (UserNet + MovieNet),
+              each outputting 32-dim embeddings trained jointly on all user-movie pairs.
+              A 12x12 genre affinity matrix encodes soft cross-genre similarity so the model understands that Thriller fans also tend to like Crime.
+              Movie embeddings are pre-computed and stored in PostgreSQL for instant dot-product inference at recommendation time.
+              Global TwoTowerNet training runs across all users, followed by per-user UserNet fine-tuning with MovieNet frozen via Celery.
+              Cold-start onboarding collects genre preferences, age range, gender, and region on step one, then presents a 1,000-film catalog across 12 genres for rating.
               JWT-authenticated Django REST API backed by PostgreSQL, with watch history, re-rating, and cascading account deletion.
             </p>
             <div class="project-tags">
