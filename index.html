@@ -94,14 +94,14 @@
               <span class="project-number">01</span>
               <span class="project-date">March 2026</span>
             </div>
-            <h3 class="project-name">FlickPick</h3>
+            <h3 class="project-name">FlickPick <span class="project-version">v2.1</span></h3>
             <p class="project-desc">
               Full-stack personalized movie recommendation system built on a two-tower neural network (UserNet + MovieNet),
               each outputting 32-dim embeddings trained jointly on all user-movie pairs.
               A 12x12 genre affinity matrix encodes soft cross-genre similarity so the model understands that Thriller fans also tend to like Crime.
               Movie embeddings are pre-computed and stored in PostgreSQL for instant dot-product inference at recommendation time.
               Global TwoTowerNet training runs across all users, followed by per-user UserNet fine-tuning with MovieNet frozen via Celery.
-              Cold-start onboarding collects genre preferences, age range, gender, and region on step one, then presents a 1,000-film catalog across 12 genres for rating.
+              Cold-start onboarding collects genre preferences, age range, gender, and region on step one, then presents a 342-film catalog across 12 genres for rating.
               JWT-authenticated Django REST API backed by PostgreSQL, with watch history, re-rating, and cascading account deletion.
             </p>
             <div class="project-tags">
@@ -140,13 +140,13 @@
               <span class="project-number">02</span>
               <span class="project-date">March 2026</span>
             </div>
-            <h3 class="project-name">San Jose Weather Predictor</h3>
+            <h3 class="project-name">San Jose Weather Predictor <span class="project-version">v3</span></h3>
             <p class="project-desc">
-              ML weather app trained on 76 years of historical data, achieving 26% lower error than baseline
-              (3.94°F vs 5.31°F MAE for highs). Engineered 40 input features including normalized temps,
-              precipitation trends, and temperature deltas. Today's forecast pulls live from the Open-Meteo
-              API; a daily management command backfills confirmed actuals so the model never trains on
-              its own predictions. Served via Django REST API with a glassmorphism React frontend.
+              ML weather app trained on 76 years of historical data, achieving 32% lower error than baseline
+              (3.61°F vs 5.31°F MAE for highs, 2.65°F vs 3.83°F for lows) on a 3-year held-out test set.
+              Engineered 40 input features including normalized temps, precipitation trends, and temperature deltas.
+              Today's forecast pulls live from the Open-Meteo API; a daily management command backfills confirmed
+              actuals so the model never trains on its own predictions. Served via Django REST API with a glassmorphism React frontend.
             </p>
             <div class="project-tags">
               <span class="tag">PyTorch</span>
