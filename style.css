@@ -173,7 +173,12 @@ section {
   text-align: center;
   padding: 0 2rem;
   position: relative;
-  background: radial-gradient(ellipse 110% 80% at 50% 0%, rgba(204,34,34,0.22) 0%, rgba(204,34,34,0.06) 50%, transparent 75%);
+  background-color: var(--bg);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M32 0H0v32' fill='none' stroke='%23cc2222' stroke-opacity='0.09' stroke-width='1'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M160 0H0v160' fill='none' stroke='%23cc2222' stroke-opacity='0.20' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 32px 32px, 160px 160px;
+  background-position: center center;
 }
 
 .hero-content {
@@ -240,7 +245,7 @@ section {
 .scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, var(--text-dim), transparent);
+  background: var(--text-dim);
   animation: scrollPulse 1.8s ease-in-out infinite;
 }
 
@@ -333,24 +338,10 @@ section {
   overflow: hidden;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, var(--accent-glow), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-
 .project-card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
-.project-card:hover::before {
-  opacity: 1;
 }
 
 .project-header {
