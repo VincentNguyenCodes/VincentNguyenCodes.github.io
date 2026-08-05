@@ -537,8 +537,12 @@ section {
   line-height: 1;
 }
 
-.carousel:hover .carousel-btn {
+.carousel.has-controls:hover .carousel-btn {
   opacity: 1;
+}
+
+.carousel:not(.has-controls) .carousel-btn {
+  display: none;
 }
 
 .carousel-btn:hover {

@@ -28,26 +28,58 @@ revealEls.forEach(el => observer.observe(el));
 // Carousel
 const state = {};
 
+function render(carousel) {
+  const id = carousel.id;
+  const track = carousel.querySelector('.carousel-track');
+  const dotsWrap = carousel.querySelector('.carousel-dots');
+  const total = track.querySelectorAll('img').length;
+
+  carousel.classList.toggle('is-empty', total === 0);
+  carousel.classList.toggle('has-controls', total > 1);
+
+  if (state[id] >= total) state[id] = Math.max(0, total - 1);
+  track.style.transform = `translateX(-${state[id] * 100}%)`;
+
+  dotsWrap.innerHTML = '';
+  if (total < 2) return;
+
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('span');
+    dot.className = i === state[id] ? 'dot active' : 'dot';
+    dot.setAttribute('role', 'button');
+    dot.setAttribute('aria-label', `Go to image ${i + 1}`);
+    dot.addEventListener('click', () => goTo(id, i));
+    dotsWrap.appendChild(dot);
+  }
+}
+
 function slide(id, dir) {
   const carousel = document.getElementById(id);
-  const track = carousel.querySelector('.carousel-track');
-  const imgs = track.querySelectorAll('img');
-  if (!state[id]) state[id] = 0;
-  state[id] = (state[id] + dir + imgs.length) % imgs.length;
-  track.style.transform = `translateX(-${state[id] * 100}%)`;
-  updateDots(id, imgs.length);
+  const total = carousel.querySelectorAll('.carousel-track img').length;
+  if (!total) return;
+  state[id] = (state[id] + dir + total) % total;
+  render(carousel);
 }
 
 function goTo(id, index) {
-  const carousel = document.getElementById(id);
-  const track = carousel.querySelector('.carousel-track');
-  const imgs = track.querySelectorAll('img');
   state[id] = index;
-  track.style.transform = `translateX(-${index * 100}%)`;
-  updateDots(id, imgs.length);
+  render(document.getElementById(id));
 }
 
-function updateDots(id, total) {
-  const dots = document.querySelectorAll(`#dots-${id} .dot`);
-  dots.forEach((d, i) => d.classList.toggle('active', i === state[id]));
-}
+document.querySelectorAll('.carousel').forEach(carousel => {
+  state[carousel.id] = 0;
+
+  carousel.querySelectorAll('.carousel-track img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.remove();
+      render(carousel);
+    });
+  });
+
+  carousel.querySelector('.carousel-btn.prev')
+    .addEventListener('click', () => slide(carousel.id, -1));
+  carousel.querySelector('.carousel-btn.next')
+    .addEventListener('click', () => slide(carousel.id, 1));
+
+  render(carousel);
+});
