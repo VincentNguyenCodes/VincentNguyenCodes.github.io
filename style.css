@@ -112,7 +112,6 @@ section {
   width: 40px;
   height: 2px;
   background: var(--accent);
-  border-radius: 2px;
 }
 
 .btn {
@@ -120,7 +119,6 @@ section {
   align-items: center;
   gap: 0.5rem;
   padding: 0.65rem 1.4rem;
-  border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
@@ -261,7 +259,6 @@ section {
 .about-photo img {
   width: 200px;
   height: 240px;
-  border-radius: 12px;
   object-fit: cover;
   object-position: center 20%;
   border: 1px solid var(--border);
@@ -288,7 +285,6 @@ section {
 .stat-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -328,7 +324,6 @@ section {
 .project-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 16px;
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
@@ -487,13 +482,11 @@ section {
 
 /* ── Carousel ────────────────────────────────────────── */
 .project-visual {
-  border-radius: 16px;
   overflow: hidden;
 }
 
 .carousel {
   position: relative;
-  border-radius: 16px;
   overflow: hidden;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -525,7 +518,6 @@ section {
   color: var(--text);
   width: 36px;
   height: 36px;
-  border-radius: 50%;
   font-size: 1.2rem;
   cursor: pointer;
   display: flex;
@@ -566,7 +558,6 @@ section {
 .dot {
   width: 6px;
   height: 6px;
-  border-radius: 50%;
   background: rgba(255,255,255,0.35);
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
@@ -579,7 +570,6 @@ section {
 
 /* ── Terminal mock ───────────────────────────────────── */
 .terminal-mock {
-  border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border);
   font-family: var(--font-mono);
@@ -666,7 +656,6 @@ section {
   padding: 0.3rem 0.75rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 6px;
   font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 500;
@@ -709,7 +698,6 @@ section {
   font-size: 0.9rem;
   padding: 0.75rem 1.25rem;
   border: 1px solid var(--border);
-  border-radius: 10px;
   background: var(--bg-card);
   transition: all 0.2s;
 }
