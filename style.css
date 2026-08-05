@@ -136,7 +136,7 @@ section {
 }
 
 .btn-primary:hover {
-  background: #6aa0f9;
+  background: #e02b2b;
   transform: translateY(-1px);
   box-shadow: 0 4px 20px rgba(204, 34, 34, 0.35);
 }
