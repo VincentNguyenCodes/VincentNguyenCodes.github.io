@@ -87,11 +87,106 @@
       <h2 class="section-title">Projects</h2>
       <div class="projects-list">
 
-        <!-- FlickPick -->
+        <!-- College Fantasy Football -->
         <div class="project-row reveal">
           <div class="project-info">
             <div class="project-meta">
               <span class="project-number">01</span>
+              <span class="project-date">June 2026 - Present</span>
+            </div>
+            <h3 class="project-name">College Fantasy Football</h3>
+            <p class="project-desc">
+              Full-stack fantasy sports platform for college football, built with a partner across a 20 step roadmap with
+              partitioned ownership. Users draft real college players, set weekly lineups, and play head to head on live game stats.
+              The commissioner selects which college teams are in scope, which defines the entire downstream player pool,
+              enforced at the API layer on every player query rather than in the UI.
+              Snake drafts run over a native FastAPI WebSocket with a server side pick clock, player queues, and broadcast pick events.
+              Scoring is per league, always computed from that league's own settings row. On game days APScheduler polls ESPN every
+              two minutes for in progress games and pushes score deltas over WebSocket, then the authoritative CFBD box score
+              overwrites live stats after the game ends. Players lock individually at their own kickoff, rejected server side.
+              One XGBoost model per position group produces per week opponent adjusted projections weighted by SP+ ratings.
+              Backed by 332 backend tests.
+            </p>
+            <div class="project-tags">
+              <span class="tag">FastAPI</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">WebSockets</span>
+              <span class="tag">XGBoost</span>
+            </div>
+            <a href="https://github.com/VincentNguyenCodes/college-fantasy-football" target="_blank" rel="noopener" class="btn btn-outline project-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="carousel" id="carousel-cff">
+              <div class="carousel-track">
+                <img src="images/cff/1.png" alt="College Fantasy Football league overview dashboard showing starting lineup, standings, and points per week" loading="lazy" />
+                <img src="images/cff/2.png" alt="College Fantasy Football weekly lineup with per-player projections and opponents" loading="lazy" />
+              </div>
+              <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
+              <button class="carousel-btn next" aria-label="Next">&#8250;</button>
+              <div class="carousel-dots"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAFH Transfer -->
+        <div class="project-row project-row-reverse reveal">
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-number">02</span>
+              <span class="project-date">July 2026</span>
+            </div>
+            <h3 class="project-name">DAFH Transfer</h3>
+            <p class="project-desc">
+              Transfer planner for De Anza and Foothill community college students. A student pastes in their unofficial transcript,
+              picks target campuses and majors, and gets back exactly which transfer requirements are already satisfied and which
+              courses are still left to take. Articulation agreements are pulled live from ASSIST.org through a session authenticated
+              client, then every response is cached in PostgreSQL so the external API is never hammered.
+              Those agreements bury required and recommended courses inside freeform HTML advisory blocks, so that HTML is sent to
+              Claude Haiku and returned as structured JSON, cached for a year, with a regex parser as the fallback path.
+              The transcript parser handles several copy paste formats and normalizes course codes like CIS D022A to CIS 22A so they
+              match what ASSIST publishes. Requirements are tracked against every target at once, so a single course shows which
+              campuses it satisfies simultaneously, and a drag and drop planner lays remaining classes out quarter by quarter.
+              Also covers Cal-GETC general education areas, prerequisite chains, six CSU admissions scrapers, and a JWT
+              authenticated advisor chat endpoint.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Django REST</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Claude API</span>
+              <span class="tag">Tailwind</span>
+            </div>
+            <a href="https://github.com/VincentNguyenCodes/dafh-transfer" target="_blank" rel="noopener" class="btn btn-outline project-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="carousel" id="carousel-dafh">
+              <div class="carousel-track">
+                <img src="images/dafh/1.png" alt="DAFH Transfer overview showing requirement progress across five transfer targets" loading="lazy" />
+                <img src="images/dafh/2.png" alt="DAFH Transfer schedule planner with classes dragged into quarters" loading="lazy" />
+                <img src="images/dafh/3.png" alt="DAFH Transfer landing and login page" loading="lazy" />
+                <img src="images/dafh/4.png" alt="DAFH Transfer requirements view showing satisfied courses and remaining pick one groups" loading="lazy" />
+              </div>
+              <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
+              <button class="carousel-btn next" aria-label="Next">&#8250;</button>
+              <div class="carousel-dots"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FlickPick -->
+        <div class="project-row reveal">
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-number">03</span>
               <span class="project-date">March 2026</span>
             </div>
             <h3 class="project-name">FlickPick <span class="project-version">v2.1</span></h3>
@@ -134,7 +229,7 @@
         <div class="project-row project-row-reverse reveal">
           <div class="project-info">
             <div class="project-meta">
-              <span class="project-number">02</span>
+              <span class="project-number">04</span>
               <span class="project-date">March 2026</span>
             </div>
             <h3 class="project-name">San Jose Weather Predictor <span class="project-version">v3</span></h3>
@@ -173,7 +268,7 @@
         <div class="project-row reveal">
           <div class="project-info">
             <div class="project-meta">
-              <span class="project-number">03</span>
+              <span class="project-number">05</span>
               <span class="project-date">November 2025</span>
             </div>
             <h3 class="project-name">UC Admissions Trends Database</h3>
